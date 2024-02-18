@@ -14,30 +14,25 @@ public class StepTracker {
     void addNewNumberStepsPerDay() {
         System.out.println("Введите номер месяца");
         int monthNumber = scanner.nextInt();
-        if (monthNumber > 0 && monthNumber <= 12) {
-            System.out.println("Данные введены верно!");
-        } else {
+        if (monthNumber < 0 || monthNumber > 12) {
             System.out.println("Данные введены неверно");
             return;
         }
         System.out.println("Введите день от 1 до 30 (включительно)");
         int dayNumber = scanner.nextInt();
-        if (dayNumber > 0 && dayNumber <= 30) {
+        if (dayNumber < 0 || dayNumber > 30) {
             // Не очень понятно почему здесь данные сохранены,
             // хотя по факту ничего не сохранено еще
-            System.out.println("Данные сохранены!");
-        } else {
             System.out.println("Данные введены неверно");
             return;
         }
         System.out.println("Введите количество шагов");
         int steps = scanner.nextInt();
-        if (steps > 0) {
-            System.out.println("Данные сохранены!");
-        } else {
+        if (steps <= 0) {
             System.out.println("Данные введены неверно");
-                return;
+            return;
         }
+        System.out.println("Данные сохранены!");
         // Очень хорошо, но можно еще лучше
         // Я бы проверил if (steps <= 0), то пишу, что данные неверны и выхожу,
         // а уже потом после условной конструкции печатаю, что данные сохранены
@@ -46,16 +41,16 @@ public class StepTracker {
     }
     void changeStepGoal() {
         // Тут какой-то слишком лютый отступ
-            System.out.println("Введите новую цель по количеству шагов в день");
-            int newGoalByStepsPerDay = scanner.nextInt();
-            if (newGoalByStepsPerDay > 0) {
-                //А здесь вообще нет отступа, хотя строки находятся в теле if'а
+        System.out.println("Введите новую цель по количеству шагов в день");
+        int newGoalByStepsPerDay = scanner.nextInt();
+        if (newGoalByStepsPerDay > 0) {
+            //А здесь вообще нет отступа, хотя строки находятся в теле if'а
             goalByStepsPerDay = newGoalByStepsPerDay;
             System.out.println("Отлично! Новая цель по количеству шагов в день: " + goalByStepsPerDay);
-            } else {
-                // Аналогично с табуляцией проблемы
+        } else {
+            // Аналогично с табуляцией проблемы
             System.out.println("Цель по количеству шагов в день должна быть больше 0");
-            }
+        }
     }
     void printStatistic() {
         System.out.println("Введите число месяца");

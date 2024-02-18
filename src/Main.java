@@ -6,17 +6,17 @@ public class Main {
         while (true) {
             printMenu();
             // Не очень хорошее название переменной, я бы сменил на command или commandNumber
-            int i = scanner.nextInt();
-            if (i == 1) {
-                System.out.println("Выполняется команда " + i);
+            int command = scanner.nextInt();
+            if (command == 1) {
+                System.out.println("Выполняется команда " + command);
                 stepTracker.addNewNumberStepsPerDay();
-            } else if (i == 2) {
-                System.out.println("Выполняется команда " + i);
+            } else if (command == 2) {
+                System.out.println("Выполняется команда " + command);
                 stepTracker.changeStepGoal();
-            } else if (i == 3) {
-                System.out.println("Выполняется команда " + i);
+            } else if (command == 3) {
+                System.out.println("Выполняется команда " + command);
                 stepTracker.printStatistic();
-            } else if (i == 4) {
+            } else if (command == 4) {
                 System.out.println("Пока!");
                 scanner.close();
                 return;
