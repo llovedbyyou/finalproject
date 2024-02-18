@@ -24,7 +24,6 @@ public class Main {
                 System.out.println("Такой команды нет");
             }
         }
-
     }
     static void printMenu() {
         System.out.println("Что вы хотите сделать? ");
