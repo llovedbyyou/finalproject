@@ -1,6 +1,7 @@
 import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
+        // Варя молодец, справилась с работой!
         Scanner scanner = new Scanner(System.in);
         StepTracker stepTracker = new StepTracker(scanner);
         while (true) {
