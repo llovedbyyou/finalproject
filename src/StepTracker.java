@@ -21,8 +21,6 @@ public class StepTracker {
         System.out.println("Введите день от 1 до 30 (включительно)");
         int dayNumber = scanner.nextInt();
         if (dayNumber < 0 || dayNumber > 30) {
-            // Не очень понятно почему здесь данные сохранены,
-            // хотя по факту ничего не сохранено еще
             System.out.println("Данные введены неверно");
             return;
         }
@@ -33,22 +31,16 @@ public class StepTracker {
             return;
         }
         System.out.println("Данные сохранены!");
-        // Очень хорошо, но можно еще лучше
-        // Я бы проверил if (steps <= 0), то пишу, что данные неверны и выхожу,
-        // а уже потом после условной конструкции печатаю, что данные сохранены
         MonthData monthData = monthToData[monthNumber - 1];
         monthData.days[dayNumber - 1] += steps;
     }
     void changeStepGoal() {
-        // Тут какой-то слишком лютый отступ
         System.out.println("Введите новую цель по количеству шагов в день");
         int newGoalByStepsPerDay = scanner.nextInt();
         if (newGoalByStepsPerDay > 0) {
-            //А здесь вообще нет отступа, хотя строки находятся в теле if'а
             goalByStepsPerDay = newGoalByStepsPerDay;
             System.out.println("Отлично! Новая цель по количеству шагов в день: " + goalByStepsPerDay);
         } else {
-            // Аналогично с табуляцией проблемы
             System.out.println("Цель по количеству шагов в день должна быть больше 0");
         }
     }
