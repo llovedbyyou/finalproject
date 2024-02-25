@@ -5,7 +5,6 @@ public class Main {
         StepTracker stepTracker = new StepTracker(scanner);
         while (true) {
             printMenu();
-            // Не очень хорошее название переменной, я бы сменил на command или commandNumber
             int command = scanner.nextInt();
             if (command == 1) {
                 System.out.println("Выполняется команда " + command);
